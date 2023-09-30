@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .completed{
+            text-decoration: line-through;
+            color: grey;
+        }
+        *{
+            position: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>To Do App</h1>
+    <input type="text" name="" id="task" placeholder="Enter Task">
+    <div id="div">
+    </div>
+    <input type="button" value="done" onclick="todo()" >
+    <script>
+        function todo(){
+          const task=document.getElementById('task');
+          const div=document.getElementById('div');
+          const taskdata=task.value;
+          if(task.value!==""){
+          const checkbox=document.createElement('input');
+          checkbox.type="checkbox";
+          const li=document.createElement('span');
+          li.textContent=taskdata;
+          div.appendChild(checkbox);
+          div.appendChild(li);
+          checkbox.addEventListener('change',function(){
+          if(checkbox.checked){
+            li.classList.add('completed');
+          }
+          
+          });
+          }
+          }
+    </script>
+</body>
+</html>
